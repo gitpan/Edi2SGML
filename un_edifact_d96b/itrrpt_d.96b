@@ -1,0 +1,985 @@
+                              UN/EDIFACT
+
+                         DRAFT RECOMMENDATION
+
+                   In transit report detail message
+
+
+
+
+
+----------------------------------------------------------------------
+This message is available for formal trial for at least six months
+from the date of approval by UN/ECE/TRADE/WP.4.
+ 
+Organisations are invited to trial this message. Comments on the
+results from the trial should be forwarded to their Rapporteur's Team
+Secretariat as soon as they are available. Based on the results of the
+trials, a UNSM may be issued.
+ 
+The segments, composite data elements, data elements and codes for
+use in the trial of this message are contained in the Draft directory.
+However, this information may differ from that in the Standard
+directory (UNTDID), even for material having the same identifying
+tags.
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+                                            Message Type : ITRRPT
+                                            Version      : D
+                                            Release      : 96B
+                                            Contr. Agency: UN
+                                            Status       : 1
+                                            Revision     : 1
+                                            Date         : 96-07-04
+
+
+
+
+
+
+SOURCE: Western European EDIFACT Board - MD1
+
+
+
+                               CONTENTS
+
+                   In transit report detail message
+
+
+
+0.   INTRODUCTION
+
+
+1.   SCOPE
+
+     1.1   Functional definition
+
+     1.2   Field of application
+
+     1.3   Principles
+
+2.   REFERENCES
+
+3.   TERMS AND DEFINITIONS
+
+4.   MESSAGE DEFINITION
+
+     4.1   Data segment clarification
+
+           4.1.1 Header section
+           4.1.2 Detail section
+           4.1.3 Summary section
+
+     4.2   Data segment index (alphabetical sequence)
+
+     4.3   Message structure
+
+           4.3.1 Segment table
+
+
+
+
+
+
+
+----------------------------------------------------------------------
+For general information on UN standard message types see UN Trade Data
+Interchange Directory, UNTDID, Part 4, Section 2.6, UN/ECE UNSM
+General Introduction
+----------------------------------------------------------------------
+
+
+
+0.     INTRODUCTION
+
+       This specification provides the definition of the In transit
+       report detail message (ITRRPT) to be used in Electronic Data
+       Interchange (EDI) between trading partners involved in
+       administration, commerce and transport.
+
+1.     SCOPE
+
+1.1    Functional Definition
+
+       A message specifying to a delivery party, the details of goods
+       within grouped consignments despatched by the delivering party.
+       This message is used in a multi-step transportation process
+       involving only consignors, grouping centres and consignees.
+       
+       A grouping centre (consolidation point) is a logistic point
+       where goods are moved from one means of transport to another,
+       to optimize transport cost. This message is not to be used to
+       identify additional services related to the despatched goods
+       (warehousing, packaging, etc.) which may provided by the third
+       party at the same location along with the Grouping service.
+
+1.2    Field of Application
+
+       The In transit report detail message may be used for both
+       national and international trade. It is based on universal
+       commercial practice and is not dependent on the type of
+       business or industry.
+
+1.3    Principles
+
+       An In Transit Report Detail message always relates to one or
+       many Despatch Advice messages sent to the parties concerned.
+       This message refers to the goods identified in the referenced
+       Despatch Advice messages
+       
+       When the recipient of the message is a grouping centre the
+       message allows the grouping centre to consolidate consignments
+       received from one or more original consignors or other grouping
+       centres and despatch them to another grouping centre or to the
+       consignee.
+       
+       When the recipient of the message is the consignee, it allows
+       the consignee to match this message with the corresponding
+       Despatch Advice messages already received from the
+       consignor(s). In case of differences, the message allows the
+       consignee to identify variances caused by a split consignment
+       or by missing goods.
+       
+       The Cargo/goods handling and movement message (HANMOV) has been
+       designed to identify additional handling services related to
+       the despatched goods, such as storage or (re-)packaging.
+       
+       An ITRRPT message specifies the details of despatched goods
+       (possibly re-grouped), corresponding to one or more original
+       despatch advices; the references to the consignment(s) by which
+       they transported can be included (the seller's and buyer's
+       perspective). The message does not necessarily provide full
+       consignment details as required for transport purposes ( the
+       carrier's perspective).
+       
+       The message refers to goods despatched on a single unit of
+       transport (e.g. a single truck, a single railway wagon etc.).
+       
+       The sender of the message may be:
+       
+       . The consignor; in this case the message may refer to several
+       buyers and consignees, but to only one seller.
+       
+       . A grouping centre; in this case the message may refer to
+       several buyers, consignors, consignees and sellers.
+       
+       The recipient of the message may be:
+       
+       . A grouping centre; in this case the message may refer to
+       several sellers, consignors, consignees and buyers.
+       
+       . The consignee; in this case the message may refer to several
+       sellers, but only one buyer and one consignee.
+       
+       The following diagram illustrates the information flows.
+       
+       
+                               INFORMATION FLOWS
+       
+       +--------------------------------->---------------------------+
+       | DESADV 1                                                    |
+       |                                 DESADV 2                    |
+       |                   +---------->----------------------------+ |
+       |                   |   -----------------------------------+| |
+       |                   |   |  DESADV 3       +---------->----+|| |
+       |                   |   |                 |  DESADV 4     ||| |
+       +------------+  +---|---|----+        +------------+      ||| |
+       | consignor 1|  | consignor 2|     +--| consignor 3|      ||| |
+       +------------+  +------------+     |  +------------+      ||| |
+            |                 |           |         |            ||| |
+          ITRRPT a        ITRRPT b    ITRRPT c   DESADV 5        ||| |
+            |                 |           |         |            ||| |
+         (DESADV1)        (DESADV2+3) (DESADV4+5)   |            ||| |
+            |                  | +---<----+         |            ||| |
+            |   +-----------------+           +-----------+      ||| |
+            |   |GROUPING CENTER 1|           |CONSIGNEE  |      ||| |
+            |   +-----------------+           |FACTORY 1  |      ||| |
+            V         |         |             +-----------+      ||| |
+            |         |         |               |                ||| |
+            |      ITRRPT d     +-------------->+                ||| |
+            |     (DES|ADV2+3+4)    ITRRPT e                     ||| |
+            |         V            (DESADV 5)                    ||| |
+       +-----------------+                    +------------+     ||| |
+       |GROUPING CENTER 2|--------------->----|  CONSIGNEE |--<--+|| |
+       +-----------------+    ITRRPT f        | FACTORY 2  |--<---+| |
+            |                 (DESADV3+4)     +------------+       | |
+            |                                                      | |
+            |                                 +-------------+      | |
+            +------------------->-------------|CONSIGNEE    |      | |
+                  ITRRPT a                    |ADVANCED     |--<---+ |
+                  (DESADV1+2)                 |WAREHOUSE 3  |--<-----+
+                                              +-------------+         
+       Remarks;
+       
+       - The indication (DESADVn) below ITRRPT n indicates that the
+       ITRRPT message match the corresponding DESADV directly sent to
+       the consignee.
+       - The material flow corresponds to the ITRRPT message flow.
+
+2.     REFERENCES
+
+       See UNTDID, Part 4, Chapter 2.6 UN/ECE UNSM - General
+       Introduction, Section 1.
+
+3.     TERMS AND DEFINITIONS
+
+       See UNTDID, Part 4, Chapter 2.6 UN/ECE UNSM - General
+       Introduction, Section 2.
+
+4.     MESSAGE DEFINITION
+
+4.1    Data Segment Clarification
+
+       This section should be read in conjunction with the Branching
+       Diagram and the Segment Table which indicate mandatory,
+       conditional and repeating requirements.
+       
+       The following guidelines and principles apply to the whole
+       message and are intended to facilitate the understanding and
+       implementation of the message:
+       
+       All specified dates/times should be in the format
+       'yymmdd'/'hhmm' unless all parties involved in the transaction
+       agree that there is a functional requirement for an alternative
+       format.
+       Periods should be specified as whole numbers representing the
+       required period as indicated in the format qualifier (weeks,
+       months, etc.)
+       
+       Where a choice of code or text is given only the code element
+       should be used wherever possible.
+       
+       Care must be taken to avoid the conflicting use of qualifiers.
+       
+       Free text information within the message should be avoided as
+       this inhibits automatic processing.
+
+4.1.1  Header section
+
+       Information to be provided in the Header section:
+
+0010   UNH, Message header
+       A service segment starting and uniquely identifying a message.
+       The message type code for the In transit report detail message
+       is ITRRPT.
+       
+       Note: In transit report detail messages conforming to this
+       document must contain the following data in segment UNH,
+       composite S009:
+
+       Data element  0065 ITRRPT
+                     0052 D
+                     0054 96B
+                     0051 UN
+
+0020   BGM, Beginning of message
+       A segment to indicate the type and function of the In Transit
+       Report Detail message and to transmit its unique identifying
+       number.
+
+0030   DTM, Date/time/period
+       A segment specifying dates and, or time and, or period relevant
+       to the whole message. The DTM segment shall be used at least
+       once to specify the date and where relevant the time of the
+       message.
+
+0040   MEA, Measurements
+       A segment specifying dimensions relevant for the entire
+       consignment such as the total weight and volume of the goods.
+
+
+0050   Segment group 1:  RFF-DTM
+       A group of segments referencing documents relating to the whole
+       message, and when necessary their dates.
+
+0060      RFF, Reference
+          A segment for referencing documents relating to the whole
+          message, e.g. way bill.
+
+0070      DTM, Date/time/period
+          Date and, or time and, or period of the referred document.
+
+
+0080   Segment group 2:  NAD-LOC-SG3-SG4
+       A group of segments identifying names, addresses and locations
+       relevant to the whole message.
+
+0090      NAD, Name and address
+          A segment for identifying names and addresses and their
+          functions relevant for the whole message. Identification of
+          the parties involved is recommended for the In Transit
+          Grouping message. They are to be given in the NAD segment.
+
+0100      LOC, Place/location identification
+          A segment indicating more details regarding specific places
+          or locations, e.g. internal site and, or building number.
+
+
+0110      Segment group 3:  RFF-DTM
+          A group of segment giving references relating to the
+          identified party and when necessary their dates.
+
+0120         RFF, Reference
+             A segment giving references relating to the identified
+             party.
+
+0130         DTM, Date/time/period
+             Date and, or time and, or period of the referred
+             document.
+
+
+0140      Segment group 4:  CTA-COM
+          A group of segments to identify person, function, department
+          and appropriate numbers to whom communication should be
+          directed.
+
+0150         CTA, Contact information
+             A segment to identify person, function, department to
+             whom communication should be directed.
+
+0160         COM, Communication contact
+             Identify communication types and numbers for person,
+             function, department identified in the CTA segment.
+
+
+0170   Segment group 5:  TDT-PCD-SG6
+       A group of segments specifying details of the mode and means of
+       transport and the percentage of its capacity used by the
+       grouped consignment.
+
+0180      TDT, Details of transport
+          A segment specifying the carriage, mode and means of
+          transport and its identification.
+
+0190      PCD, Percentage details
+          A segment indicating the utilized capacity of the means of
+          transport.
+
+
+0200      Segment group 6:  LOC-DTM
+          A group of segments giving relevant transport nodes.
+
+0210         LOC, Place/location identification
+             A segment indicating relevant transport nodes.
+
+0220         DTM, Date/time/period
+             A segment giving the date and, or time and, or period
+             information of departure and, or arrival for the
+             specified location.
+
+
+0230   Segment group 7:  EQD-MEA-SEL-EQA-PCD-SG8
+       A group of segments describing the characteristics of the
+       equipment used for the transportation of goods and where
+       relevant how they are handled.
+
+0240      EQD, Equipment details
+          A segment to define information regarding equipment used.
+
+0250      MEA, Measurements
+          A segment specifying the physical measurements of the
+          equipment.
+
+0260      SEL, Seal number
+          A segment specifying a seal number connected to a specific
+          equipment named in the EQD segment.
+
+0270      EQA, Attached equipment
+          A segment identifying equipment either attached to the
+          equipment described in the EQD segment above. This attached
+          equipment may be further defined in a subsequent EQD
+          segment.
+
+0280      PCD, Percentage details
+          A segment indicating the utilized capacity of the equipment.
+
+
+0290      Segment group 8:  HAN-FTX
+          A group of segments providing information on hazardous goods
+          and their handling.
+
+0300         HAN, Handling instructions
+             A segment providing handling instruction  or notification
+             of hazardous  materials, or both,  in the specified
+             equipment.
+
+0310         FTX, Free text
+             A segment with free text information, in coded or clear
+             form, to give further clarification on hazardous goods
+             and their handling.
+
+4.1.2  Detail section
+
+       Information to be provided in the Detail section:
+
+
+0320   Segment group 9:  GIS-CDI-DTM-ALI-MEA-MOA-SG10-SG11-SG14-SG15
+       A group of segments giving details of a set of goods originally
+       described in a single Despatch Advice directly sent to the
+       consignee (see the flow diagram in section 1.3 Principles).
+
+0330      GIS, General indicator
+          A segment used to indicate the start of a loop related to a
+          given original despatch using data element 7365 processing
+          indicator identifying a consignment driven process.
+
+0340      CDI, Physical or logical state
+          A segment used to indicate, if the original despatch has
+          been split, and if yes which part of the original despatch
+          is described (first, intermediate, last).
+
+0350      DTM, Date/time/period
+          A segment giving date and, or time and, or period relevant
+          to the original loop of despatch.
+
+0360      ALI, Additional information
+          A segment indicating special conditions owing to origin,
+          customs preference or commercial factors.
+
+0370      MEA, Measurements
+          A segment specifying dimension of the set of goods as
+          detailed in the segment group, such as weight and volume.
+
+0380      MOA, Monetary amount
+          A segment specifying the packing and transport costs
+          applicable to the despatch for customs clearance.
+
+
+0390      Segment group 10: RFF-DTM
+          A group of segments giving references and where necessary
+          their dates, relating to the specified goods, e.g. original
+          despatch advice, contract number.
+
+0400         RFF, Reference
+             This segment must be used to refer to the original
+             despatch advice number. It may also be used to give
+             references related to the original despatch advice e.g.
+             purchase order, delivery schedule message, import or
+             export license.
+
+0410         DTM, Date/time/period
+             Date and, or time and, or period of the reference.
+
+
+0420      Segment group 11: NAD-LOC-SG12-SG13
+          A group of segments identifying names and addresses,
+          locations, and required supporting documents relevant to the
+          goods as detailed in the GIS-group.
+
+0430         NAD, Name and address
+             A segment for specifying parties by their name, address
+             and function, relevant to the referred goods, e.g.
+             consignor, consignee, freight forwarder.
+
+0440         LOC, Place/location identification
+             A segment indicating specific location details for the
+             specified party, e.g. internal site or building number.
+
+
+0450         Segment group 12: RFF-DTM
+             A group of segments giving references relevant to the
+             specified party.
+
+0460            RFF, Reference
+                A segment for referencing documents relating to the
+                party specified by the NAD segment.
+
+0470            DTM, Date/time/period
+                Date and, or time and, or period of the reference.
+
+
+0480         Segment group 13: CTA-COM
+             A group of segments to identify person, function,
+             department and appropriate numbers to whom communication
+             should be directed.
+
+0490            CTA, Contact information
+                A segment to identify person, function, department to
+                whom communication should be directed.
+
+0500            COM, Communication contact
+                Identify communication types and numbers for person,
+                function, department identified in CTA.
+
+
+0510      Segment group 14: TOD-LOC-FTX
+          A group of segments indicating terms of delivery.
+
+0520         TOD, Terms of delivery or transport
+             A segment indicating the terms of delivery for the
+             referred goods.
+
+0530         LOC, Place/location identification
+             A segment indicating locations qualifying the terms of
+             delivery.
+
+0540         FTX, Free text
+             Additional free text giving terms of delivery. In
+             computer to computer exchanges such text will normally
+             require the receiver to process this segment manually.
+
+
+0550      Segment group 15: CPS-FTX-SG16-SG20
+          A group of segments providing details of all packages and,
+          or despatched products. This segment group provides also the
+          capability to give the hierarchical top-down relationship of
+          all package levels.
+
+0560         CPS, Consignment packing sequence
+             To identify the sequence in which physical packing is
+             presented in the consignment, and optionally to identify
+             the hierarchical relationship between packing layers.
+
+0570         FTX, Free text
+             A segment with free text information, in coded or clear
+             form, to give further clarification, when required, to
+             the packaging sequence. In computer to computer exchanges
+             such text will normally require the receiver to process
+             this segment manually.
+
+
+0580         Segment group 16: PAC-MEA-QTY-SG17-SG18
+             A group of segments identifying, physical dimensions,
+             marks and numbers, quantities, date and time information,
+             handling information and information about packaging at
+             this level.
+
+0590            PAC, Package
+                A segment specifying the number and type of package or
+                physical units and the physical type of packaging for
+                the despatched goods.
+
+0600            MEA, Measurements
+                A segment specifying measurements of the package.
+
+0610            QTY, Quantity
+                This segment identifies the quantity of items included
+                in the package. Depending on the packaging level,
+                these items are lower level packages or product at the
+                lowest packaging level.
+
+
+0620            Segment group 17: HAN-FTX
+                A group of segments providing information on hazardous
+                goods and handling.
+
+0630               HAN, Handling instructions
+                   A segment providing instructions and notification
+                   of hazardous materials contained in the specified
+                   package.
+
+0640               FTX, Free text
+                   A segment with free text information, in coded or
+                   clear form, to give further clarification, when
+                   required, to hazardous goods and their handling. In
+                   computer to computer exchanges such text will
+                   normally require the receiver to process this
+                   segment manually.
+
+
+0650            Segment group 18: PCI-RFF-CDI-DTM-SG19
+                A group of segments specifying markings and package
+                numbers and the relevant conditions.
+
+0660               PCI, Package identification
+                   A segment specifying markings and labels used on
+                   individual packages.
+
+0670               RFF, Reference
+                   A segment for referencing the package
+                   identification e.g. master label number of the
+                   package containing all lower level packages
+                   identified in the GIN segment triggering segment
+                   group 19.
+
+0680               CDI, Physical or logical state
+                   A segment to give conditions attached to the
+                   package referenced by the preceding RFF segment.
+
+0690               DTM, Date/time/period
+                   A segment for date/time/period as related to the
+                   package, e.g. production date, expiry date, etc.
+
+
+0700               Segment group 19: GIN-CDI-DLM
+                   A group of segments giving package identification
+                   numbers and where relevant delivery limitation
+                   information.
+
+0710                  GIN, Goods identity number
+                      A segment providing identity numbers being
+                      applied to the described packages.
+
+0720                  CDI, Physical or logical state
+                      An indicator to reflect specific condition valid
+                      for all packages identified by the actual GIN
+                      segment.
+
+0730                  DLM, Delivery limitations
+                      A segment to identify any limitation on delivery
+                      of goods e.g. hold until final approval by
+                      supplier.
+
+
+0740         Segment group 20: LIN-PIA-IMD-MEA-CDI-QTY-ALI-GIN-GIR-
+                               DTM-MOA-FTX-SG21-SG22-SG23
+             A group of segments providing details of the individual
+             items contained in the packages. The segments ALI and MOA
+             are only to be used in case they are needed for customs
+             clearance.
+
+0750            LIN, Line item
+                A segment identifying the product.
+
+0760            PIA, Additional product id
+                A segment providing additional product identification.
+
+0770            IMD, Item description
+                A segment for describing the product. This segment
+                should be used for products that cannot be identified
+                by a product code or article number.
+
+0780            MEA, Measurements
+                A segment specifying physical measurements of the
+                delivery product in original or unpacked form.
+
+0790            CDI, Physical or logical state
+                A segment to reflect specific conditions related to
+                the product.
+
+0800            QTY, Quantity
+                A segment to give quantity information.
+
+0810            ALI, Additional information
+                A segment indicating that the product is subjected to
+                special conditions owing to origin, customs
+                preference, or commercial factors.
+
+0820            GIN, Goods identity number
+                A segment providing identity numbers applied to the
+                product, e.g. serial numbers for assembled equipments.
+
+0830            GIR, Related identification numbers
+                A segment providing set of related identification
+                numbers for the product, e.g. engine number, chassis
+                number and transmission number for vehicle.
+
+0840            DTM, Date/time/period
+                A segment providing date and, or time information
+                related to the product e.g. production date.
+
+0850            MOA, Monetary amount
+                A segment to provide the custom value of the product.
+
+0860            FTX, Free text
+                A segment with free text information, in coded or
+                clear form, to give further clarification, when
+                required, to the product. In computer to computer
+                exchanges such text will normally require the receiver
+                to process this segment manually.
+
+
+0870            Segment group 21: RFF-DTM
+                A group of segments to give reference numbers and
+                dates for the product.
+
+0880               RFF, Reference
+                   A segment to provide references related to the
+                   product.
+
+0890               DTM, Date/time/period
+                   A segment for date and, or time and, or period as
+                   related to the reference.
+
+
+0900            Segment group 22: DGS-QTY-FTX
+                A group of segments giving indication about dangerous
+                goods.
+
+0910               DGS, Dangerous goods
+                   A segment to indicate the class of dangerous goods.
+
+0920               QTY, Quantity
+                   A segment to specify quantity of the given
+                   dangerous goods.
+
+0930               FTX, Free text
+                   A segment with free text information, in coded or
+                   clear form, to give further clarification, when
+                   required, to dangerous goods. In computer to
+                   computer exchanges such text will normally require
+                   the receiver to process this segment manually.
+
+
+0940            Segment group 23: PCI-CDI-DTM-QTY-MEA-SG24-SG25
+                A group of segments identifying one specific package
+                or a number of packages, their marks and numbers,
+                conditions, measurements, quantities, date and time
+                information and handling instructions, used for
+                specified product.
+
+0950               PCI, Package identification
+                   A segment specifying marking and labels used on
+                   individual used on individual packages or a range
+                   of them.
+
+0960               CDI, Physical or logical state
+                   A segment to give conditions attached to the
+                   corresponding packages.
+
+0970               DTM, Date/time/period
+                   A segment indicating the date and, or time details
+                   relating to the goods in the package e.g.
+                   expiration date.
+
+0980               QTY, Quantity
+                   A segment to specify quantity per package.
+
+0990               MEA, Measurements
+                   A segment specifying physical measurements of
+                   packages.
+
+
+1000               Segment group 24: GIN-CDI-DLM
+                   A group of segments giving package identification
+                   numbers and where relevant delivery limitation
+                   information.
+
+1010                  GIN, Goods identity number
+                      A segment providing identification numbers being
+                      applied to the packages.
+
+1020                  CDI, Physical or logical state
+                      A segment to give conditions attached to the
+                      package(s) identified in the GIN segment.
+
+1030                  DLM, Delivery limitations
+                      A segment to identify any limitation on delivery
+                      of goods e.g. hold until final approval by
+                      supplier.
+
+
+1040               Segment group 25: HAN-FTX-GIN
+                   A group of segments providing information on
+                   hazardous material and handling.
+
+1050                  HAN, Handling instructions
+                      A segment providing information on handling and
+                      notification of hazardous materials.
+
+1060                  FTX, Free text
+                      A segment with free text information, in coded
+                      or clear form, to give further clarification,
+                      when required, for hazardous materials. In
+                      computer to computer exchanges such text will
+                      normally require the receiver to process this
+                      segment manually.
+
+1070                  GIN, Goods identity number
+                      A segment providing identification numbers being
+                      applied to the package.
+
+4.1.3  Summary section
+
+       Information to be provided in the Summary section:
+
+1080   CNT, Control total
+       A segment by which control totals may by provided by sender
+       checking by receiver.
+
+1090   UNT, Message trailer
+       A service segment ending a message, giving the total number of
+       segments in the message and the control reference number of the
+       message.
+
+4.2    Data segment index (Alphabetical sequence by tag)
+
+          ALI Additional information
+          BGM Beginning of message
+          CDI Physical or logical state
+          CNT Control total
+          COM Communication contact
+          CPS Consignment packing sequence
+          CTA Contact information
+          DGS Dangerous goods
+          DLM Delivery limitations
+          DTM Date/time/period
+          EQA Attached equipment
+          EQD Equipment details
+          FTX Free text
+          GIN Goods identity number
+          GIR Related identification numbers
+          GIS General indicator
+          HAN Handling instructions
+          IMD Item description
+          LIN Line item
+          LOC Place/location identification
+          MEA Measurements
+          MOA Monetary amount
+          NAD Name and address
+          PAC Package
+          PCD Percentage details
+          PCI Package identification
+          PIA Additional product id
+          QTY Quantity
+          RFF Reference
+          SEL Seal number
+          TDT Details of transport
+          TOD Terms of delivery or transport
+          UNH Message header
+          UNT Message trailer
+
+4.3    Message structure
+
+4.3.1  Segment table
+
+Pos    Tag Name                                      S   R
+
+           HEADER SECTION
+
+0010   UNH Message header                            M   1     
+0020   BGM Beginning of message                      M   1     
+0030   DTM Date/time/period                          C   10    
+0040   MEA Measurements                              C   5     
+
+0050       ----- Segment group 1  ------------------ C   10----------+
+0060   RFF Reference                                 M   1           |
+0070   DTM Date/time/period                          C   5-----------+
+
+0080       ----- Segment group 2  ------------------ C   10----------+
+0090   NAD Name and address                          M   1           |
+0100   LOC Place/location identification             C   10          |
+                                                                     |
+0110       ----- Segment group 3  ------------------ C   10---------+|
+0120   RFF Reference                                 M   1          ||
+0130   DTM Date/time/period                          C   5----------+|
+                                                                     |
+0140       ----- Segment group 4  ------------------ C   10---------+|
+0150   CTA Contact information                       M   1          ||
+0160   COM Communication contact                     C   5----------++
+
+0170       ----- Segment group 5  ------------------ C   10----------+
+0180   TDT Details of transport                      M   1           |
+0190   PCD Percentage details                        C   5           |
+                                                                     |
+0200       ----- Segment group 6  ------------------ C   10---------+|
+0210   LOC Place/location identification             M   1          ||
+0220   DTM Date/time/period                          C   10---------++
+
+0230       ----- Segment group 7  ------------------ C   10----------+
+0240   EQD Equipment details                         M   1           |
+0250   MEA Measurements                              C   5           |
+0260   SEL Seal number                               C   99          |
+0270   EQA Attached equipment                        C   5           |
+0280   PCD Percentage details                        C   5           |
+                                                                     |
+0290       ----- Segment group 8  ------------------ C   10---------+|
+0300   HAN Handling instructions                     M   1          ||
+0310   FTX Free text                                 C   10---------++
+
+           DETAIL SECTION
+
+0320       ----- Segment group 9  ------------------ M   99----------+
+0330   GIS General indicator                         M   1           |
+0340   CDI Physical or logical state                 C   1           |
+0350   DTM Date/time/period                          C   10          |
+0360   ALI Additional information                    C   5           |
+0370   MEA Measurements                              C   5           |
+0380   MOA Monetary amount                           C   5           |
+                                                                     |
+0390       ----- Segment group 10 ------------------ M   10---------+|
+0400   RFF Reference                                 M   1          ||
+0410   DTM Date/time/period                          C   1----------+|
+                                                                     |
+0420       ----- Segment group 11 ------------------ C   10---------+|
+0430   NAD Name and address                          M   1          ||
+0440   LOC Place/location identification             C   10         ||
+                                                                    ||
+0450       ----- Segment group 12 ------------------ C   10--------+||
+0460   RFF Reference                                 M   1         |||
+0470   DTM Date/time/period                          C   1---------+||
+                                                                    ||
+0480       ----- Segment group 13 ------------------ C   10--------+||
+0490   CTA Contact information                       M   1         |||
+0500   COM Communication contact                     C   5---------++|
+                                                                     |
+0510       ----- Segment group 14 ------------------ C   10---------+|
+0520   TOD Terms of delivery or transport            M   1          ||
+0530   LOC Place/location identification             C   5          ||
+0540   FTX Free text                                 C   5----------+|
+                                                                     |
+0550       ----- Segment group 15 ------------------ C   9999-------+|
+0560   CPS Consignment packing sequence              M   1          ||
+0570   FTX Free text                                 C   5          ||
+                                                                    ||
+0580       ----- Segment group 16 ------------------ C   9999------+||
+0590   PAC Package                                   M   1         |||
+0600   MEA Measurements                              C   10        |||
+0610   QTY Quantity                                  C   10        |||
+                                                                   |||
+0620       ----- Segment group 17 ------------------ C   10-------+|||
+0630   HAN Handling instructions                     M   1        ||||
+0640   FTX Free text                                 C   10-------+|||
+                                                                   |||
+0650       ----- Segment group 18 ------------------ C   9999-----+|||
+0660   PCI Package identification                    M   1        ||||
+0670   RFF Reference                                 C   1        ||||
+0680   CDI Physical or logical state                 C   1        ||||
+0690   DTM Date/time/period                          C   5        ||||
+                                                                  ||||
+0700       ----- Segment group 19 ------------------ C   99------+||||
+0710   GIN Goods identity number                     M   1       |||||
+0720   CDI Physical or logical state                 C   1       |||||
+0730   DLM Delivery limitations                      C   999-----+++||
+                                                                    ||
+0740       ----- Segment group 20 ------------------ C   1---------+||
+0750   LIN Line item                                 M   1         |||
+0760   PIA Additional product id                     C   10        |||
+0770   IMD Item description                          C   99        |||
+0780   MEA Measurements                              C   10        |||
+0790   CDI Physical or logical state                 C   1         |||
+0800   QTY Quantity                                  C   10        |||
+0810   ALI Additional information                    C   10        |||
+0820   GIN Goods identity number                     C   999       |||
+0830   GIR Related identification numbers            C   999       |||
+0840   DTM Date/time/period                          C   5         |||
+0850   MOA Monetary amount                           C   1         |||
+0860   FTX Free text                                 C   5         |||
+                                                                   |||
+0870       ----- Segment group 21 ------------------ C   10-------+|||
+0880   RFF Reference                                 M   1        ||||
+0890   DTM Date/time/period                          C   1--------+|||
+                                                                   |||
+0900       ----- Segment group 22 ------------------ C   10-------+|||
+0910   DGS Dangerous goods                           M   1        ||||
+0920   QTY Quantity                                  C   1        ||||
+0930   FTX Free text                                 C   5--------+|||
+                                                                   |||
+0940       ----- Segment group 23 ------------------ C   9999-----+|||
+0950   PCI Package identification                    M   1        ||||
+0960   CDI Physical or logical state                 C   1        ||||
+0970   DTM Date/time/period                          C   5        ||||
+0980   QTY Quantity                                  C   1        ||||
+0990   MEA Measurements                              C   10       ||||
+                                                                  ||||
+1000       ----- Segment group 24 ------------------ C   10------+||||
+1010   GIN Goods identity number                     M   1       |||||
+1020   CDI Physical or logical state                 C   1       |||||
+1030   DLM Delivery limitations                      C   999-----+||||
+                                                                  ||||
+1040       ----- Segment group 25 ------------------ C   10------+||||
+1050   HAN Handling instructions                     M   1       |||||
+1060   FTX Free text                                 C   5       |||||
+1070   GIN Goods identity number                     C   9999----+++++
+
+           SUMMARY SECTION
+
+1080   CNT Control total                             C   1     
+1090   UNT Message trailer                           M   1     

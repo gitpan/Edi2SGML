@@ -1,0 +1,832 @@
+C002	0		DOCUMENT/MESSAGE NAME		
+C002	1	1001	Document/message name, coded	C	an..3
+C002	2	1131	Code list qualifier	C	an..3
+C002	3	3055	Code list responsible agency, coded	C	an..3
+C002	4	1000	Document/message name	C	an..35
+C040	0		CARRIER		
+C040	1	3127	Carrier identification	C	an..17
+C040	2	1131	Code list qualifier	C	an..3
+C040	3	3055	Code list responsible agency, coded	C	an..3
+C040	4	3128	Carrier name	C	an..35
+C042	0		NATIONALITY DETAILS		
+C042	1	3293	Nationality, coded	C	an..3
+C042	2	1131	Code list qualifier	C	an..3
+C042	3	3055	Code list responsible agency, coded	C	an..3
+C042	4	3292	Nationality	C	a..35
+C045	0		BILL LEVEL IDENTIFICATION		
+C045	1	7436	Level one id.	C	an..17
+C045	2	7438	Level two id.	C	an..17
+C045	3	7440	Level three id.	C	an..17
+C045	4	7442	Level four id.	C	an..17
+C045	5	7444	Level five id.	C	an..17
+C045	6	7446	Level six id.	C	an..17
+C049	0		REMUNERATION TYPE IDENTIFICATION		
+C049	1	5315	Remuneration type, coded	C	an..3
+C049	2	1131	Code list qualifier	C	an..3
+C049	3	3055	Code list responsible agency, coded	C	an..3
+C049	4	5314	Remuneration type	C	an..35
+C049	5	5314	Remuneration type	C	an..35
+C056	0		DEPARTMENT OR EMPLOYEE DETAILS		
+C056	1	3413	Department or employee identification	C	an..17
+C056	2	3412	Department or employee	C	an..35
+C058	0		NAME AND ADDRESS		
+C058	1	3124	Name and address line	M	an..35
+C058	2	3124	Name and address line	C	an..35
+C058	3	3124	Name and address line	C	an..35
+C058	4	3124	Name and address line	C	an..35
+C058	5	3124	Name and address line	C	an..35
+C059	0		STREET		
+C059	1	3042	Street and number/p.o. box	M	an..35
+C059	2	3042	Street and number/p.o. box	C	an..35
+C059	3	3042	Street and number/p.o. box	C	an..35
+C059	4	3042	Street and number/p.o. box	C	an..35
+C076	0		COMMUNICATION CONTACT		
+C076	1	3148	Communication number	M	an..512
+C076	2	3155	Communication channel qualifier	M	an..3
+C077	0		FILE IDENTIFICATION		
+C077	1	1508	File name	C	an..35
+C077	2	7008	Item description	C	an..35
+C078	0		ACCOUNT IDENTIFICATION		
+C078	1	3194	Account holder number	C	an..35
+C078	2	3192	Account holder name	C	an..35
+C078	3	3192	Account holder name	C	an..35
+C078	4	6345	Currency, coded	C	an..3
+C079	0		COMPUTER ENVIRONMENT IDENTIFICATION		
+C079	1	1511	Computer environment, coded	C	an..3
+C079	2	1131	Code list qualifier	C	an..3
+C079	3	3055	Code list responsible agency, coded	C	an..3
+C079	4	1510	Computer environment	C	an..35
+C079	5	1056	Version	C	an..9
+C079	6	1058	Release	C	an..9
+C079	7	7402	Identity number	C	an..35
+C080	0		PARTY NAME		
+C080	1	3036	Party name	M	an..35
+C080	2	3036	Party name	C	an..35
+C080	3	3036	Party name	C	an..35
+C080	4	3036	Party name	C	an..35
+C080	5	3036	Party name	C	an..35
+C080	6	3045	Party name format, coded	C	an..3
+C082	0		PARTY IDENTIFICATION DETAILS		
+C082	1	3039	Party id. identification	M	an..35
+C082	2	1131	Code list qualifier	C	an..3
+C082	3	3055	Code list responsible agency, coded	C	an..3
+C085	0		MARITAL STATUS DETAILS		
+C085	1	3479	Marital status, coded	C	an..3
+C085	2	1131	Code list qualifier	C	an..3
+C085	3	3055	Code list responsible agency, coded	C	an..3
+C085	4	3478	Marital status	C	an..35
+C088	0		INSTITUTION IDENTIFICATION		
+C088	1	3433	Institution name identification	C	an..11
+C088	2	1131	Code list qualifier	C	an..3
+C088	3	3055	Code list responsible agency, coded	C	an..3
+C088	4	3434	Institution branch number	C	an..17
+C088	5	1131	Code list qualifier	C	an..3
+C088	6	3055	Code list responsible agency, coded	C	an..3
+C088	7	3432	Institution name	C	an..70
+C088	8	3436	Institution branch place	C	an..70
+C090	0		ADDRESS DETAILS		
+C090	1	3477	Address format, coded	M	an..3
+C090	2	3286	Address component	M	an..70
+C090	3	3286	Address component	C	an..70
+C090	4	3286	Address component	C	an..70
+C090	5	3286	Address component	C	an..70
+C090	6	3286	Address component	C	an..70
+C099	0		FILE DETAILS		
+C099	1	1516	File format	M	an..17
+C099	2	1056	Version	C	an..9
+C099	3	1503	Data format, coded	C	an..3
+C099	4	1502	Data format	C	an..35
+C100	0		TERMS OF DELIVERY OR TRANSPORT		
+C100	1	4053	Terms of delivery or transport, coded	C	an..3
+C100	2	1131	Code list qualifier	C	an..3
+C100	3	3055	Code list responsible agency, coded	C	an..3
+C100	4	4052	Terms of delivery or transport	C	an..70
+C100	5	4052	Terms of delivery or transport	C	an..70
+C101	0		RELIGION DETAILS		
+C101	1	3483	Religion, coded	C	an..3
+C101	2	1131	Code list qualifier	C	an..3
+C101	3	3055	Code list responsible agency, coded	C	an..3
+C101	4	3482	Religion	C	an..35
+C106	0		DOCUMENT/MESSAGE IDENTIFICATION		
+C106	1	1004	Document/message number	C	an..35
+C106	2	1056	Version	C	an..9
+C106	3	1060	Revision number	C	an..6
+C107	0		TEXT REFERENCE		
+C107	1	4441	Free text identification	M	an..17
+C107	2	1131	Code list qualifier	C	an..3
+C107	3	3055	Code list responsible agency, coded	C	an..3
+C108	0		TEXT LITERAL		
+C108	1	4440	Free text	M	an..70
+C108	2	4440	Free text	C	an..70
+C108	3	4440	Free text	C	an..70
+C108	4	4440	Free text	C	an..70
+C108	5	4440	Free text	C	an..70
+C110	0		PAYMENT TERMS		
+C110	1	4277	Terms of payment identification	M	an..17
+C110	2	1131	Code list qualifier	C	an..3
+C110	3	3055	Code list responsible agency, coded	C	an..3
+C110	4	4276	Terms of payment	C	an..35
+C110	5	4276	Terms of payment	C	an..35
+C112	0		TERMS/TIME INFORMATION		
+C112	1	2475	Payment time reference, coded	M	an..3
+C112	2	2009	Time relation, coded	C	an..3
+C112	3	2151	Type of period, coded	C	an..3
+C112	4	2152	Number of periods	C	n..3
+C128	0		RATE DETAILS		
+C128	1	5419	Rate type qualifier	M	an..3
+C128	2	5420	Rate per unit	M	n..15
+C128	3	5284	Unit price basis	C	n..9
+C128	4	6411	Measure unit qualifier	C	an..3
+C138	0		PRICE MULTIPLIER INFORMATION		
+C138	1	5394	Price multiplier	M	n..12
+C138	2	5393	Price multiplier qualifier	C	an..3
+C174	0		VALUE/RANGE		
+C174	1	6411	Measure unit qualifier	M	an..3
+C174	2	6314	Measurement value	C	an..18
+C174	3	6162	Range minimum	C	n..18
+C174	4	6152	Range maximum	C	n..18
+C174	5	6432	Significant digits	C	n..2
+C186	0		QUANTITY DETAILS		
+C186	1	6063	Quantity qualifier	M	an..3
+C186	2	6060	Quantity	M	n..15
+C186	3	6411	Measure unit qualifier	C	an..3
+C200	0		CHARGE		
+C200	1	8023	Freight and charges identification	C	an..17
+C200	2	1131	Code list qualifier	C	an..3
+C200	3	3055	Code list responsible agency, coded	C	an..3
+C200	4	8022	Freight and charges	C	an..26
+C200	5	4237	Prepaid/collect indicator, coded	C	an..3
+C200	6	7140	Item number	C	an..35
+C202	0		PACKAGE TYPE		
+C202	1	7065	Type of packages identification	C	an..17
+C202	2	1131	Code list qualifier	C	an..3
+C202	3	3055	Code list responsible agency, coded	C	an..3
+C202	4	7064	Type of packages	C	an..35
+C203	0		RATE/TARIFF CLASS		
+C203	1	5243	Rate/tariff class identification	M	an..9
+C203	2	1131	Code list qualifier	C	an..3
+C203	3	3055	Code list responsible agency, coded	C	an..3
+C203	4	5242	Rate/tariff class	C	an..35
+C203	5	5275	Supplementary rate/tariff basis	C	an..6
+C203	6	1131	Code list qualifier	C	an..3
+C203	7	3055	Code list responsible agency, coded	C	an..3
+C203	8	5275	Supplementary rate/tariff basis	C	an..6
+C203	9	1131	Code list qualifier	C	an..3
+C203	10	3055	Code list responsible agency, coded	C	an..3
+C205	0		HAZARD CODE		
+C205	1	8351	Hazard code identification	M	an..7
+C205	2	8078	Hazard substance/item/page number	C	an..7
+C205	3	8092	Hazard code version number	C	an..10
+C206	0		IDENTIFICATION NUMBER		
+C206	1	7402	Identity number	M	an..35
+C206	2	7405	Identity number qualifier	C	an..3
+C206	3	4405	Status, coded	C	an..3
+C208	0		IDENTITY NUMBER RANGE		
+C208	1	7402	Identity number	M	an..35
+C208	2	7402	Identity number	C	an..35
+C210	0		MARKS & LABELS		
+C210	1	7102	Shipping marks	M	an..35
+C210	2	7102	Shipping marks	C	an..35
+C210	3	7102	Shipping marks	C	an..35
+C210	4	7102	Shipping marks	C	an..35
+C210	5	7102	Shipping marks	C	an..35
+C210	6	7102	Shipping marks	C	an..35
+C210	7	7102	Shipping marks	C	an..35
+C210	8	7102	Shipping marks	C	an..35
+C210	9	7102	Shipping marks	C	an..35
+C210	10	7102	Shipping marks	C	an..35
+C211	0		DIMENSIONS		
+C211	1	6411	Measure unit qualifier	M	an..3
+C211	2	6168	Length dimension	C	n..15
+C211	3	6140	Width dimension	C	n..15
+C211	4	6008	Height dimension	C	n..15
+C212	0		ITEM NUMBER IDENTIFICATION		
+C212	1	7140	Item number	C	an..35
+C212	2	7143	Item number type, coded	C	an..3
+C212	3	1131	Code list qualifier	C	an..3
+C212	4	3055	Code list responsible agency, coded	C	an..3
+C213	0		NUMBER AND TYPE OF PACKAGES		
+C213	1	7224	Number of packages	C	n..8
+C213	2	7065	Type of packages identification	C	an..17
+C213	3	1131	Code list qualifier	C	an..3
+C213	4	3055	Code list responsible agency, coded	C	an..3
+C213	5	7064	Type of packages	C	an..35
+C214	0		SPECIAL SERVICES IDENTIFICATION		
+C214	1	7161	Special services, coded	C	an..3
+C214	2	1131	Code list qualifier	C	an..3
+C214	3	3055	Code list responsible agency, coded	C	an..3
+C214	4	7160	Special service	C	an..35
+C214	5	7160	Special service	C	an..35
+C215	0		SEAL ISSUER		
+C215	1	9303	Sealing party, coded	C	an..3
+C215	2	1131	Code list qualifier	C	an..3
+C215	3	3055	Code list responsible agency, coded	C	an..3
+C215	4	9302	Sealing party	C	an..35
+C218	0		HAZARDOUS MATERIAL		
+C218	1	7419	Hazardous material class code, identification	C	an..4
+C218	2	1131	Code list qualifier	C	an..3
+C218	3	3055	Code list responsible agency, coded	C	an..3
+C218	4	7418	Hazardous material class	C	an..35
+C219	0		MOVEMENT TYPE		
+C219	1	8335	Movement type, coded	C	an..3
+C219	2	8334	Movement type	C	an..35
+C220	0		MODE OF TRANSPORT		
+C220	1	8067	Mode of transport, coded	C	an..3
+C220	2	8066	Mode of transport	C	an..17
+C222	0		TRANSPORT IDENTIFICATION		
+C222	1	8213	Id. of means of transport identification	C	an..9
+C222	2	1131	Code list qualifier	C	an..3
+C222	3	3055	Code list responsible agency, coded	C	an..3
+C222	4	8212	Id. of the means of transport	C	an..35
+C222	5	8453	Nationality of means of transport, coded	C	an..3
+C223	0		DANGEROUS GOODS SHIPMENT FLASHPOINT		
+C223	1	7106	Shipment flashpoint	C	n3
+C223	2	6411	Measure unit qualifier	C	an..3
+C224	0		EQUIPMENT SIZE AND TYPE		
+C224	1	8155	Equipment size and type identification	C	an..10
+C224	2	1131	Code list qualifier	C	an..3
+C224	3	3055	Code list responsible agency, coded	C	an..3
+C224	4	8154	Equipment size and type	C	an..35
+C228	0		TRANSPORT MEANS		
+C228	1	8179	Type of means of transport identification	C	an..8
+C228	2	8178	Type of means of transport	C	an..17
+C229	0		CHARGE CATEGORY		
+C229	1	5237	Charge category, coded	M	an..3
+C229	2	1131	Code list qualifier	C	an..3
+C229	3	3055	Code list responsible agency, coded	C	an..3
+C231	0		METHOD OF PAYMENT		
+C231	1	4215	Transport charges method of payment, coded	M	an..3
+C231	2	1131	Code list qualifier	C	an..3
+C231	3	3055	Code list responsible agency, coded	C	an..3
+C232	0		GOVERNMENT ACTION		
+C232	1	9415	Government agency, coded	C	an..3
+C232	2	9411	Government involvement, coded	C	an..3
+C232	3	9417	Government action, coded	C	an..3
+C232	4	9353	Government procedure, coded	C	an..3
+C233	0		SERVICE		
+C233	1	7273	Service requirement, coded	M	an..3
+C233	2	1131	Code list qualifier	C	an..3
+C233	3	3055	Code list responsible agency, coded	C	an..3
+C233	4	7273	Service requirement, coded	C	an..3
+C233	5	1131	Code list qualifier	C	an..3
+C233	6	3055	Code list responsible agency, coded	C	an..3
+C234	0		UNDG INFORMATION		
+C234	1	7124	UNDG number	C	n4
+C234	2	7088	Dangerous goods flashpoint	C	an..8
+C235	0		HAZARD IDENTIFICATION		
+C235	1	8158	Hazard identification number, upper part	C	an..4
+C235	2	8186	Substance identification number, lower part	C	an4
+C236	0		DANGEROUS GOODS LABEL		
+C236	1	8246	Dangerous goods label marking	C	an..4
+C236	2	8246	Dangerous goods label marking	C	an..4
+C236	3	8246	Dangerous goods label marking	C	an..4
+C237	0		EQUIPMENT IDENTIFICATION		
+C237	1	8260	Equipment identification number	C	an..17
+C237	2	1131	Code list qualifier	C	an..3
+C237	3	3055	Code list responsible agency, coded	C	an..3
+C237	4	3207	Country, coded	C	an..3
+C239	0		TEMPERATURE SETTING		
+C239	1	6246	Temperature setting	C	n3
+C239	2	6411	Measure unit qualifier	C	an..3
+C240	0		PRODUCT CHARACTERISTIC		
+C240	1	7037	Characteristic identification	M	an..17
+C240	2	1131	Code list qualifier	C	an..3
+C240	3	3055	Code list responsible agency, coded	C	an..3
+C240	4	7036	Characteristic	C	an..35
+C240	5	7036	Characteristic	C	an..35
+C241	0		DUTY/TAX/FEE TYPE		
+C241	1	5153	Duty/tax/fee type, coded	C	an..3
+C241	2	1131	Code list qualifier	C	an..3
+C241	3	3055	Code list responsible agency, coded	C	an..3
+C241	4	5152	Duty/tax/fee type	C	an..35
+C242	0		PROCESS TYPE AND DESCRIPTION		
+C242	1	7187	Process type identification	M	an..17
+C242	2	1131	Code list qualifier	C	an..3
+C242	3	3055	Code list responsible agency, coded	C	an..3
+C242	4	7186	Process type	C	an..35
+C242	5	7186	Process type	C	an..35
+C243	0		DUTY/TAX/FEE DETAIL		
+C243	1	5279	Duty/tax/fee rate identification	C	an..7
+C243	2	1131	Code list qualifier	C	an..3
+C243	3	3055	Code list responsible agency, coded	C	an..3
+C243	4	5278	Duty/tax/fee rate	C	an..17
+C243	5	5273	Duty/tax/fee rate basis identification	C	an..12
+C243	6	1131	Code list qualifier	C	an..3
+C243	7	3055	Code list responsible agency, coded	C	an..3
+C244	0		TEST METHOD		
+C244	1	4415	Test method identification	C	an..17
+C244	2	1131	Code list qualifier	C	an..3
+C244	3	3055	Code list responsible agency, coded	C	an..3
+C244	4	4416	Test description	C	an..70
+C246	0		CUSTOMS IDENTITY CODES		
+C246	1	7361	Customs code identification	M	an..18
+C246	2	1131	Code list qualifier	C	an..3
+C246	3	3055	Code list responsible agency, coded	C	an..3
+C270	0		CONTROL		
+C270	1	6069	Control qualifier	M	an..3
+C270	2	6066	Control value	M	n..18
+C270	3	6411	Measure unit qualifier	C	an..3
+C273	0		ITEM DESCRIPTION		
+C273	1	7009	Item description identification	C	an..17
+C273	2	1131	Code list qualifier	C	an..3
+C273	3	3055	Code list responsible agency, coded	C	an..3
+C273	4	7008	Item description	C	an..35
+C273	5	7008	Item description	C	an..35
+C273	6	3453	Language, coded	C	an..3
+C279	0		QUANTITY DIFFERENCE INFORMATION		
+C279	1	6064	Quantity difference	M	n..15
+C279	2	6063	Quantity qualifier	C	an..3
+C280	0		RANGE		
+C280	1	6411	Measure unit qualifier	M	an..3
+C280	2	6162	Range minimum	C	n..18
+C280	3	6152	Range maximum	C	n..18
+C286	0		SEQUENCE INFORMATION		
+C286	1	1050	Sequence number	M	an..10
+C286	2	1159	Sequence number source, coded	C	an..3
+C286	3	1131	Code list qualifier	C	an..3
+C286	4	3055	Code list responsible agency, coded	C	an..3
+C288	0		PRODUCT GROUP		
+C288	1	5389	Product group, coded	C	an..3
+C288	2	1131	Code list qualifier	C	an..3
+C288	3	3055	Code list responsible agency, coded	C	an..3
+C288	4	5388	Product group	C	an..35
+C292	0		PRICE CHANGE INFORMATION		
+C292	1	5377	Price change indicator, coded	M	an..3
+C292	2	1131	Code list qualifier	C	an..3
+C292	3	3055	Code list responsible agency, coded	C	an..3
+C329	0		PATTERN DESCRIPTION		
+C329	1	2013	Frequency, coded	C	an..3
+C329	2	2015	Despatch pattern, coded	C	an..3
+C329	3	2017	Despatch pattern timing, coded	C	an..3
+C330	0		INSURANCE COVER TYPE		
+C330	1	4497	Insurance cover type, coded	M	an..3
+C330	2	1131	Code list qualifier	C	an..3
+C330	3	3055	Code list responsible agency, coded	C	an..3
+C331	0		INSURANCE COVER DETAILS		
+C331	1	4495	Insurance cover identification	C	an..17
+C331	2	1131	Code list qualifier	C	an..3
+C331	3	3055	Code list responsible agency, coded	C	an..3
+C331	4	4494	Insurance cover	C	an..35
+C331	5	4494	Insurance cover	C	an..35
+C332	0		SALES CHANNEL IDENTIFICATION		
+C332	1	3496	Sales channel identifier	M	an..17
+C332	2	1131	Code list qualifier	C	an..3
+C332	3	3055	Code list responsible agency, coded	C	an..3
+C333	0		INFORMATION REQUEST		
+C333	1	4511	Requested information, coded	C	an..3
+C333	2	1131	Code list qualifier	C	an..3
+C333	3	3055	Code list responsible agency, coded	C	an..3
+C333	4	4510	Requested information	C	an..35
+C401	0		EXCESS TRANSPORTATION INFORMATION		
+C401	1	8457	Excess transportation reason, coded	M	an..3
+C401	2	8459	Excess transportation responsibility, coded	M	an..3
+C401	3	7130	Customer authorization number	C	an..17
+C402	0		PACKAGE TYPE IDENTIFICATION		
+C402	1	7077	Item description type, coded	M	an..3
+C402	2	7064	Type of packages	M	an..35
+C402	3	7143	Item number type, coded	C	an..3
+C402	4	7064	Type of packages	C	an..35
+C402	5	7143	Item number type, coded	C	an..3
+C501	0		PERCENTAGE DETAILS		
+C501	1	5245	Percentage qualifier	M	an..3
+C501	2	5482	Percentage	C	n..10
+C501	3	5249	Percentage basis, coded	C	an..3
+C501	4	1131	Code list qualifier	C	an..3
+C501	5	3055	Code list responsible agency, coded	C	an..3
+C502	0		MEASUREMENT DETAILS		
+C502	1	6313	Measurement dimension, coded	C	an..3
+C502	2	6321	Measurement significance, coded	C	an..3
+C502	3	6155	Measurement attribute identification	C	an..17
+C502	4	6154	Measurement attribute	C	an..70
+C503	0		DOCUMENT/MESSAGE DETAILS		
+C503	1	1004	Document/message number	C	an..35
+C503	2	1373	Document/message status, coded	C	an..3
+C503	3	1366	Document/message source	C	an..35
+C503	4	3453	Language, coded	C	an..3
+C504	0		CURRENCY DETAILS		
+C504	1	6347	Currency details qualifier	M	an..3
+C504	2	6345	Currency, coded	C	an..3
+C504	3	6343	Currency qualifier	C	an..3
+C504	4	6348	Currency rate base	C	n..4
+C506	0		REFERENCE		
+C506	1	1153	Reference qualifier	M	an..3
+C506	2	1154	Reference number	C	an..35
+C506	3	1156	Line number	C	an..6
+C506	4	4000	Reference version number	C	an..35
+C507	0		DATE/TIME/PERIOD		
+C507	1	2005	Date/time/period qualifier	M	an..3
+C507	2	2380	Date/time/period	C	an..35
+C507	3	2379	Date/time/period format qualifier	C	an..3
+C508	0		LANGUAGE DETAILS		
+C508	1	3453	Language, coded	C	an..3
+C508	2	3452	Language	C	an..35
+C509	0		PRICE INFORMATION		
+C509	1	5125	Price qualifier	M	an..3
+C509	2	5118	Price	C	n..15
+C509	3	5375	Price type, coded	C	an..3
+C509	4	5387	Price type qualifier	C	an..3
+C509	5	5284	Unit price basis	C	n..9
+C509	6	6411	Measure unit qualifier	C	an..3
+C512	0		SIZE DETAILS		
+C512	1	6173	Size qualifier	C	an..3
+C512	2	6174	Size	C	n..15
+C514	0		SAMPLE LOCATION DETAILS		
+C514	1	3237	Sample location, coded	C	an..3
+C514	2	3236	Sample location	C	an..35
+C515	0		TEST REASON		
+C515	1	4425	Test reason identification	C	an..17
+C515	2	1131	Code list qualifier	C	an..3
+C515	3	3055	Code list responsible agency, coded	C	an..3
+C515	4	4424	Test reason	C	an..35
+C516	0		MONETARY AMOUNT		
+C516	1	5025	Monetary amount type qualifier	M	an..3
+C516	2	5004	Monetary amount	C	n..18
+C516	3	6345	Currency, coded	C	an..3
+C516	4	6343	Currency qualifier	C	an..3
+C516	5	4405	Status, coded	C	an..3
+C517	0		LOCATION IDENTIFICATION		
+C517	1	3225	Place/location identification	C	an..25
+C517	2	1131	Code list qualifier	C	an..3
+C517	3	3055	Code list responsible agency, coded	C	an..3
+C517	4	3224	Place/location	C	an..70
+C519	0		RELATED LOCATION ONE IDENTIFICATION		
+C519	1	3223	Related place/location one identification	C	an..25
+C519	2	1131	Code list qualifier	C	an..3
+C519	3	3055	Code list responsible agency, coded	C	an..3
+C519	4	3222	Related place/location one	C	an..70
+C521	0		BUSINESS FUNCTION		
+C521	1	4027	Business function qualifier	M	an..3
+C521	2	4025	Business function, coded	M	an..3
+C521	3	1131	Code list qualifier	C	an..3
+C521	4	3055	Code list responsible agency, coded	C	an..3
+C521	5	4022	Business description	C	an..70
+C522	0		INSTRUCTION		
+C522	1	4403	Instruction qualifier	M	an..3
+C522	2	4401	Instruction, coded	C	an..3
+C522	3	1131	Code list qualifier	C	an..3
+C522	4	3055	Code list responsible agency, coded	C	an..3
+C522	5	4400	Instruction	C	an..35
+C523	0		NUMBER OF UNIT DETAILS		
+C523	1	6350	Number of units	C	n..15
+C523	2	6353	Number of units qualifier	C	an..3
+C524	0		HANDLING INSTRUCTIONS		
+C524	1	4079	Handling instructions, coded	C	an..3
+C524	2	1131	Code list qualifier	C	an..3
+C524	3	3055	Code list responsible agency, coded	C	an..3
+C524	4	4078	Handling instructions	C	an..70
+C526	0		FREQUENCY DETAILS		
+C526	1	6071	Frequency qualifier	M	an..3
+C526	2	6072	Frequency value	C	n..9
+C526	3	6411	Measure unit qualifier	C	an..3
+C527	0		STATISTICAL DETAILS		
+C527	1	6314	Measurement value	C	an..18
+C527	2	6411	Measure unit qualifier	C	an..3
+C527	3	6313	Measurement dimension, coded	C	an..3
+C527	4	6321	Measurement significance, coded	C	an..3
+C528	0		COMMODITY/RATE DETAIL		
+C528	1	7357	Commodity/rate identification	C	an..18
+C528	2	1131	Code list qualifier	C	an..3
+C528	3	3055	Code list responsible agency, coded	C	an..3
+C529	0		PROCESSING INDICATOR		
+C529	1	7365	Processing indicator, coded	M	an..3
+C529	2	1131	Code list qualifier	C	an..3
+C529	3	3055	Code list responsible agency, coded	C	an..3
+C529	4	7187	Process type identification	C	an..17
+C531	0		PACKAGING DETAILS		
+C531	1	7075	Packaging level, coded	C	an..3
+C531	2	7233	Packaging related information, coded	C	an..3
+C531	3	7073	Packaging terms and conditions, coded	C	an..3
+C532	0		RETURNABLE PACKAGE DETAILS		
+C532	1	8395	Returnable package freight payment	C	an..3
+C532	2	8393	Returnable package load contents, coded	C	an..3
+C533	0		DUTY/TAX/FEE ACCOUNT DETAIL		
+C533	1	5289	Duty/tax/fee account identification	M	an..6
+C533	2	1131	Code list qualifier	C	an..3
+C533	3	3055	Code list responsible agency, coded	C	an..3
+C534	0		PAYMENT INSTRUCTION DETAILS		
+C534	1	4439	Payment conditions, coded	C	an..3
+C534	2	4431	Payment guarantee, coded	C	an..3
+C534	3	4461	Payment means, coded	C	an..3
+C534	4	1131	Code list qualifier	C	an..3
+C534	5	3055	Code list responsible agency, coded	C	an..3
+C534	6	4435	Payment channel, coded	C	an..3
+C536	0		CONTRACT AND CARRIAGE CONDITION		
+C536	1	4065	Contract and carriage condition, coded	M	an..3
+C536	2	1131	Code list qualifier	C	an..3
+C536	3	3055	Code list responsible agency, coded	C	an..3
+C537	0		TRANSPORT PRIORITY		
+C537	1	4219	Transport priority, coded	M	an..3
+C537	2	1131	Code list qualifier	C	an..3
+C537	3	3055	Code list responsible agency, coded	C	an..3
+C543	0		AGREEMENT TYPE IDENTIFICATION		
+C543	1	7431	Agreement type qualifier	M	an..3
+C543	2	7433	Agreement type, coded	C	an..3
+C543	3	1131	Code list qualifier	C	an..3
+C543	4	3055	Code list responsible agency, coded	C	an..3
+C543	5	7434	Agreement type description	C	an..70
+C545	0		INDEX IDENTIFICATION		
+C545	1	5013	Index qualifier	M	an..3
+C545	2	5027	Index type, coded	C	an..3
+C545	3	1131	Code list qualifier	C	an..3
+C545	4	3055	Code list responsible agency, coded	C	an..3
+C546	0		INDEX VALUE		
+C546	1	5030	Index value	M	n..6
+C546	2	5039	Index value representation, coded	C	an..3
+C549	0		MONETARY FUNCTION		
+C549	1	5007	Monetary function, coded	M	an..3
+C549	2	1131	Code list qualifier	C	an..3
+C549	3	3055	Code list responsible agency, coded	C	an..3
+C550	0		REQUIREMENT/CONDITION IDENTIFICATION		
+C550	1	7295	Requirement/condition identification	M	an..17
+C550	2	1131	Code list qualifier	C	an..3
+C550	3	3055	Code list responsible agency, coded	C	an..3
+C550	4	7294	Requirement or condition	C	an..35
+C551	0		BANK OPERATION		
+C551	1	4383	Bank operation, coded	M	an..3
+C551	2	1131	Code list qualifier	C	an..3
+C551	3	3055	Code list responsible agency, coded	C	an..3
+C552	0		ALLOWANCE/CHARGE INFORMATION		
+C552	1	1230	Allowance or charge number	C	an..35
+C552	2	5189	Charge/allowance description, coded	C	an..3
+C553	0		RELATED LOCATION TWO IDENTIFICATION		
+C553	1	3233	Related place/location two identification	C	an..25
+C553	2	1131	Code list qualifier	C	an..3
+C553	3	3055	Code list responsible agency, coded	C	an..3
+C553	4	3232	Related place/location two	C	an..70
+C554	0		RATE/TARIFF CLASS DETAIL		
+C554	1	5243	Rate/tariff class identification	C	an..9
+C554	2	1131	Code list qualifier	C	an..3
+C554	3	3055	Code list responsible agency, coded	C	an..3
+C555	0		STATUS EVENT		
+C555	1	9011	Status event, coded	M	an..3
+C555	2	1131	Code list qualifier	C	an..3
+C555	3	3055	Code list responsible agency, coded	C	an..3
+C555	4	9010	Status event	C	an..35
+C556	0		STATUS REASON		
+C556	1	9013	Status reason, coded	M	an..3
+C556	2	1131	Code list qualifier	C	an..3
+C556	3	3055	Code list responsible agency, coded	C	an..3
+C556	4	9012	Status reason	C	an..35
+C564	0		PHYSICAL OR LOGICAL STATE INFORMATION		
+C564	1	7007	Physical or logical state, coded	C	an..3
+C564	2	1131	Code list qualifier	C	an..3
+C564	3	3055	Code list responsible agency, coded	C	an..3
+C564	4	7006	Physical or logical state	C	an..35
+C585	0		PRIORITY DETAILS		
+C585	1	4037	Priority, coded	C	an..3
+C585	2	1131	Code list qualifier	C	an..3
+C585	3	3055	Code list responsible agency, coded	C	an..3
+C585	4	4036	Priority	C	an..35
+C601	0		STATUS TYPE		
+C601	1	9015	Status type, coded	M	an..3
+C601	2	1131	Code list qualifier	C	an..3
+C601	3	3055	Code list responsible agency, coded	C	an..3
+C701	0		ERROR POINT DETAILS		
+C701	1	1049	Message section, coded	C	an..3
+C701	2	1052	Message item number	C	an..35
+C701	3	1054	Message sub-item number	C	n..6
+C702	0		CODE SET IDENTIFICATION		
+C702	1	9150	Simple data element tag	C	an..4
+C702	2	1131	Code list qualifier	C	an..3
+C702	3	3055	Code list responsible agency, coded	C	an..3
+C703	0		NATURE OF CARGO		
+C703	1	7085	Nature of cargo, coded	M	an..3
+C703	2	1131	Code list qualifier	C	an..3
+C703	3	3055	Code list responsible agency, coded	C	an..3
+C709	0		MESSAGE IDENTIFIER		
+C709	1	1475	Message type identifier	M	an..6
+C709	2	1056	Version	M	an..9
+C709	3	1058	Release	M	an..9
+C709	4	1476	Control agency	M	an..2
+C709	5	1523	Association assigned identification	C	an..6
+C709	6	1060	Revision number	C	an..6
+C770	0		ARRAY CELL DETAILS		
+C770	1	9424	Array cell information	C	an..35
+C778	0		POSITION IDENTIFICATION		
+C778	1	7164	Hierarchical id. number	C	an..12
+C778	2	1050	Sequence number	C	an..10
+C779	0		ARRAY STRUCTURE IDENTIFICATION		
+C779	1	9428	Array structure identifier	M	an..35
+C779	2	7405	Identity number qualifier	C	an..3
+C780	0		VALUE LIST IDENTIFICATION		
+C780	1	1518	Value list identifier	M	an..35
+C780	2	7405	Identity number qualifier	C	an..3
+C782	0		DATA SET IDENTIFICATION		
+C782	1	1520	Data set identifier	M	an..35
+C782	2	7405	Identity number qualifier	C	an..3
+C783	0		FOOTNOTE SET IDENTIFICATION		
+C783	1	9430	Footnote set identifier	M	an..35
+C783	2	7405	Identity number qualifier	C	an..3
+C784	0		FOOTNOTE IDENTIFICATION		
+C784	1	9432	Footnote identifier	M	an..35
+C784	2	7405	Identity number qualifier	C	an..3
+C785	0		STATISTICAL CONCEPT IDENTIFICATION		
+C785	1	6434	Statistical concept identifier	M	an..35
+C785	2	7405	Identity number qualifier	C	an..3
+C786	0		STRUCTURE COMPONENT IDENTIFICATION		
+C786	1	7512	Structure component identifier	M	an..35
+C786	2	7405	Identity number qualifier	C	an..3
+C814	0		SAFETY SECTION		
+C814	1	4046	Safety section	M	n..2
+C814	2	4044	Safety section name	C	an..70
+C815	0		ADDITIONAL SAFETY INFORMATION		
+C815	1	4039	Additional safety information, coded	M	an..3
+C815	2	1131	Code list qualifier	C	an..3
+C815	3	3055	Code list responsible agency, coded	C	an..3
+C815	4	4038	Additional safety information	C	an..35
+C816	0		NAME COMPONENT DETAILS		
+C816	1	3405	Name component qualifier	M	an..3
+C816	2	3398	Name component	C	an..70
+C816	3	3401	Name component status, coded	C	an..3
+C816	4	3295	Name component original representation, coded	C	an..3
+C817	0		ADDRESS USAGE		
+C817	1	3299	Address purpose, coded	C	an..3
+C817	2	3131	Address type, coded	C	an..3
+C817	3	3475	Address status, coded	C	an..3
+C818	0		PERSON INHERITED CHARACTERISTIC DETAILS		
+C818	1	3311	Person inherited characteristic	C	an..8
+C818	2	1131	Code list qualifier	C	an..3
+C818	3	3055	Code list responsible agency, coded	C	an..3
+C818	4	3310	Person inherited characteristic	C	an..70
+C819	0		COUNTRY SUB-ENTITY DETAILS		
+C819	1	3229	Country sub-entity identification	C	an..9
+C819	2	1131	Code list qualifier	C	an..3
+C819	3	3055	Code list responsible agency, coded	C	an..3
+C819	4	3228	Country sub-entity	C	an..35
+C821	0		TYPE OF DAMAGE		
+C821	1	7501	Type of damage, coded	C	an..3
+C821	2	1131	Code list qualifier	C	an..3
+C821	3	3055	Code list responsible agency, coded	C	an..3
+C821	4	7500	Type of damage	C	an..35
+C822	0		DAMAGE AREA		
+C822	1	7503	Damage area identification	C	an..4
+C822	2	1131	Code list qualifier	C	an..3
+C822	3	3055	Code list responsible agency, coded	C	an..3
+C822	4	7502	Damage area	C	an..35
+C823	0		TYPE OF UNIT/COMPONENT		
+C823	1	7505	Type of unit/component, coded	C	an..3
+C823	2	1131	Code list qualifier	C	an..3
+C823	3	3055	Code list responsible agency, coded	C	an..3
+C823	4	7504	Type of unit/component	C	an..35
+C824	0		COMPONENT MATERIAL		
+C824	1	7507	Component material, coded	C	an..3
+C824	2	1131	Code list qualifier	C	an..3
+C824	3	3055	Code list responsible agency, coded	C	an..3
+C824	4	7506	Component material	C	an..35
+C825	0		DAMAGE SEVERITY		
+C825	1	7509	Damage severity, coded	C	an..3
+C825	2	1131	Code list qualifier	C	an..3
+C825	3	3055	Code list responsible agency, coded	C	an..3
+C825	4	7508	Damage severity	C	an..35
+C826	0		ACTION		
+C826	1	1229	Action request/notification, coded	C	an..3
+C826	2	1131	Code list qualifier	C	an..3
+C826	3	3055	Code list responsible agency, coded	C	an..3
+C826	4	1228	Action request/notification	C	an..35
+C827	0		TYPE OF MARKING		
+C827	1	7511	Type of marking, coded	M	an..3
+C827	2	1131	Code list qualifier	C	an..3
+C827	3	3055	Code list responsible agency, coded	C	an..3
+C828	0		CLINICAL INTERVENTION DETAILS		
+C828	1	9437	Clinical intervention identification	C	an..17
+C828	2	1131	Code list qualifier	C	an..3
+C828	3	3055	Code list responsible agency, coded	C	an..3
+C828	4	9436	Clinical intervention	C	an..70
+C829	0		SUB-LINE INFORMATION		
+C829	1	5495	Sub-line indicator, coded	C	an..3
+C829	2	1082	Line item number	C	n..6
+C830	0		PROCESS IDENTIFICATION DETAILS		
+C830	1	7191	Process identification	C	an..17
+C830	2	1131	Code list qualifier	C	an..3
+C830	3	3055	Code list responsible agency, coded	C	an..3
+C830	4	7190	Process	C	an..70
+C831	0		RESULT DETAILS		
+C831	1	6314	Measurement value	C	an..18
+C831	2	6321	Measurement significance, coded	C	an..3
+C831	3	6155	Measurement attribute identification	C	an..17
+C831	4	1131	Code list qualifier	C	an..3
+C831	5	3055	Code list responsible agency, coded	C	an..3
+C831	6	6154	Measurement attribute	C	an..70
+C836	0		CLINICAL INFORMATION DETAILS		
+C836	1	6413	Clinical information identification	C	an..17
+C836	2	1131	Code list qualifier	C	an..3
+C836	3	3055	Code list responsible agency, coded	C	an..3
+C836	4	6412	Clinical information	C	an..70
+C837	0		CERTAINTY DETAILS		
+C837	1	4049	Certainty, coded	C	an..3
+C837	2	1131	Code list qualifier	C	an..3
+C837	3	3055	Code list responsible agency, coded	C	an..3
+C837	4	4048	Certainty	C	an..35
+C838	0		DOSAGE DETAILS		
+C838	1	6083	Dosage identification	C	an..8
+C838	2	1131	Code list qualifier	C	an..3
+C838	3	3055	Code list responsible agency, coded	C	an..3
+C838	4	6082	Dosage	C	an..70
+C839	0		ATTENDEE CATEGORY		
+C839	1	7459	Attendee category, coded	C	an..3
+C839	2	1131	Code list qualifier	C	an..3
+C839	3	3055	Code list responsible agency, coded	C	an..3
+C839	4	7458	Attendee category	C	an..35
+C840	0		ATTENDANCE ADMISSION DETAILS		
+C840	1	9445	Admission type, coded	C	an..3
+C840	2	1131	Code list qualifier	C	an..3
+C840	3	3055	Code list responsible agency, coded	C	an..3
+C840	4	9444	Admission type	C	an..35
+C841	0		ATTENDANCE DISCHARGE DETAILS		
+C841	1	9447	Discharge type, coded	C	an..3
+C841	2	1131	Code list qualifier	C	an..3
+C841	3	3055	Code list responsible agency, coded	C	an..3
+C841	4	9446	Discharge type	C	an..35
+C844	0		ORGANISATION CLASSIFICATION DETAIL		
+C844	1	3083	Organisational class identification	C	an..17
+C844	2	1131	Code list qualifier	C	an..3
+C844	3	3055	Code list responsible agency, coded	C	an..3
+C844	4	3082	Organisational class	C	an..70
+C848	0		MEASUREMENT UNIT DETAILS		
+C848	1	6417	Measurement unit identification	C	an..8
+C848	2	1131	Code list qualifier	C	an..3
+C848	3	3055	Code list responsible agency, coded	C	an..3
+C848	4	6416	Measurement unit	C	an..35
+C849	0		PARTIES TO INSTRUCTION		
+C849	1	3301	Party enacting instruction identification	M	an..17
+C849	2	3285	Recipient of the instruction identification	C	an..17
+C850	0		STATUS OF INSTRUCTION		
+C850	1	4405	Status, coded	M	an..3
+C850	2	3036	Party name	C	an..35
+C853	0		ERROR SEGMENT POINT DETAILS		
+C853	1	9166	Segment tag	C	an..3
+C853	2	1050	Sequence number	C	an..10
+C853	3	1159	Sequence number source, coded	C	an..3
+C878	0		CHARGE/ALLOWANCE ACCOUNT		
+C878	1	3434	Institution branch number	M	an..17
+C878	2	1131	Code list qualifier	C	an..3
+C878	3	3055	Code list responsible agency, coded	C	an..3
+C878	4	3194	Account holder number	C	an..35
+C878	5	6345	Currency, coded	C	an..3
+C889	0		CHARACTERISTIC VALUE		
+C889	1	7111	Characteristic value, coded	C	an..3
+C889	2	1131	Code list qualifier	C	an..3
+C889	3	3055	Code list responsible agency, coded	C	an..3
+C889	4	7110	Characteristic value	C	an..35
+C889	5	7110	Characteristic value	C	an..35
+C901	0		APPLICATION ERROR DETAIL		
+C901	1	9321	Application error identification	M	an..8
+C901	2	1131	Code list qualifier	C	an..3
+C901	3	3055	Code list responsible agency, coded	C	an..3
+C941	0		RELATIONSHIP		
+C941	1	9143	Relationship, coded	C	an..3
+C941	2	1131	Code list qualifier	C	an..3
+C941	3	3055	Code list responsible agency, coded	C	an..3
+C941	4	9142	Relationship	C	an..35
+C942	0		MEMBERSHIP CATEGORY		
+C942	1	7451	Membership category identification	M	an..4
+C942	2	1131	Code list qualifier	C	an..3
+C942	3	3055	Code list responsible agency, coded	C	an..3
+C942	4	7450	Membership category	C	an..35
+C944	0		MEMBERSHIP STATUS		
+C944	1	7453	Membership status, coded	C	an..3
+C944	2	1131	Code list qualifier	C	an..3
+C944	3	3055	Code list responsible agency, coded	C	an..3
+C944	4	7452	Membership status	C	an..35
+C945	0		MEMBERSHIP LEVEL		
+C945	1	7455	Membership level qualifier	M	an..3
+C945	2	7457	Membership level identification	C	an..9
+C945	3	1131	Code list qualifier	C	an..3
+C945	4	3055	Code list responsible agency, coded	C	an..3
+C945	5	7456	Membership level	C	an..35
+C948	0		EMPLOYMENT CATEGORY		
+C948	1	9005	Employment category, coded	C	an..3
+C948	2	1131	Code list qualifier	C	an..3
+C948	3	3055	Code list responsible agency, coded	C	an..3
+C948	4	9004	Employment category	C	an..35
+C950	0		QUALIFICATION CLASSIFICATION		
+C950	1	9007	Qualification classification, coded	C	an..3
+C950	2	1131	Code list qualifier	C	an..3
+C950	3	3055	Code list responsible agency, coded	C	an..3
+C950	4	9006	Qualification classification	C	an..35
+C950	5	9006	Qualification classification	C	an..35
+C951	0		OCCUPATION		
+C951	1	9009	Occupation, coded	C	an..3
+C951	2	1131	Code list qualifier	C	an..3
+C951	3	3055	Code list responsible agency, coded	C	an..3
+C951	4	9008	Occupation	C	an..35
+C951	5	9008	Occupation	C	an..35
+C953	0		CONTRIBUTION TYPE		
+C953	1	5049	Contribution type, coded	M	an..3
+C953	2	1131	Code list qualifier	C	an..3
+C953	3	3055	Code list responsible agency, coded	C	an..3
+C953	4	5048	Contribution type	C	an..35
+C955	0		ATTRIBUTE TYPE		
+C955	1	9021	Attribute type, coded	M	an..3
+C955	2	1131	Code list qualifier	C	an..3
+C955	3	3055	Code list responsible agency, coded	C	an..3
+C956	0		ATTRIBUTE DETAILS		
+C956	1	9019	Attribute, coded	C	an..3
+C956	2	1131	Code list qualifier	C	an..3
+C956	3	3055	Code list responsible agency, coded	C	an..3
+C956	4	9018	Attribute	C	an..35
+C960	0		REASON FOR CHANGE		
+C960	1	4295	Change reason, coded	C	an..3
+C960	2	1131	Code list qualifier	C	an..3
+C960	3	3055	Code list responsible agency, coded	C	an..3
+C960	4	4294	Change reason	C	an..35
